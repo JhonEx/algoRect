@@ -26,6 +26,12 @@ class RectanglesTest {
 
     @Test
     void intersect() {
+        topLeftRec1 = new Point(1,10);
+        bottomRight1 = new Point(8, 1);
+        Rectangles rectangleOne = new Rectangles(topLeftRec1, bottomRight1);
+
+        assertTrue(rectangleOne.intersect(new Rectangles(new Point(2,4), new Point(5,2))));
+        assertFalse(rectangleOne.intersect(new Rectangles(new Point(6,7), new Point(10,4))));
 
     }
 

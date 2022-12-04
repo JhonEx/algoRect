@@ -116,6 +116,18 @@ public class Rectangle {
 //                (getDistance(x, r.getX()) < width / 2 + r.getWidth() / 2);
     }
 
+    public boolean isAdjacentTo(Rectangle r) {
+        double width1 = x + width / 2;
+        double width2 = r.getX() + r.getWidth() / 2 - r.getWidth();
+        double height1 = y + height / 2;
+        double height2 = r.getY() + r.getHeight() / 2 - r.getHeight();
+
+        if(!contains(r) && !overlaps(r) && width1 == width2 || height1 == height2){
+            return true;
+        }
+        return false;
+    }
+
 //    public boolean isAdjacentTo(Rectangle2D otherRectangle, double tolerance) {
 //        if(Math.abs(getLeftSide()-otherRectangle.getRightSide())<tolerance||Math.abs(otherRectangle.getLeftSide()-getRightSide())<tolerance)
 //        {

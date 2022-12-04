@@ -102,7 +102,7 @@ public class Rectangle {
         double distanceX = getDistance(x, r.getX());
         double widthD =  width / 2 + r.getWidth() / 2;
 
-        if( !contains(r) &&  (widthX > widthR || heightX > heightR && distanceY < heightD && distanceX < widthD )) {
+        if( !contains(r) &&  (widthX > widthR || heightX > heightR) && distanceY < heightD && distanceX < widthD ) {
             return true;
         }
 
@@ -111,7 +111,6 @@ public class Rectangle {
 //        return !contains(r) &&
 //                ((x + width / 2 > r.getX() - r.getWidth()) ||
 //                        (y + height / 2 > r.getY() - r.getHeight())) &&
-//
 //                (getDistance(y, r.getY()) < height / 2 + r.getHeight() / 2) &&
 //                (getDistance(x, r.getX()) < width / 2 + r.getWidth() / 2);
     }
@@ -143,4 +142,13 @@ public class Rectangle {
     private double getDistance(double p1, double p2) {
         return Math.sqrt(Math.pow(p2 - p1, 2));
     }
+
+    public static void main(String[] args) {
+        Rectangle r1 = new Rectangle(3, 3, 4, 4);
+
+        System.out.println((r1.overlaps(new Rectangle(6,3, 4, 4)) ? "Overlaps" : "Does not overlap"));
+
+    }
+
 }
+

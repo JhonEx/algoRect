@@ -22,20 +22,36 @@ public class Rectangles {
     }
 
     public boolean intersect(Rectangles two) {
-        if (!(containment(two)) && !(adjacent(two)) && (this.topLeft.y < two.bottomRight.y ||
-                this.bottomRight.y > two.topLeft.y ||
-                this.bottomRight.x < two.topLeft.x ||
-                this.topLeft.x > two.bottomRight.x)) {
-            System.out.println("They are intersecting");
+
+        double X_1 = (this.topLeft.x + this.bottomRight.x) / 2 ;
+        double X_2 = (two.bottomRight.x + two.topLeft.x) / 2;
+        double Y_1 = (this.bottomRight.y + this.topLeft.y)/ 2 ;
+        double Y_2 = (two.bottomRight.y + two.topLeft.y) / 2;
+
+        double width_1 = getDistance(this.bottomRight.x, this.topLeft.x);
+        double width_2 = getDistance(two.bottomRight.x, two.topLeft.x);
+        double height_1 = getDistance(this.bottomRight.y, this.topLeft.y);
+        double height_2 = getDistance(two.bottomRight.y, two.topLeft.y);
+
+        double width_rec1 = X_1 + width_1 / 2;
+        double width_rec2 = X_2 - width_2;
+        double height_rec1 = Y_1 + height_1 / 2;
+        double height_rec2 = Y_2 - height_2;
+        double distanceY = getDistance(Y_1, Y_2);
+        double heightD =  height_1 / 2 + height_2/ 2;
+        double distanceX = getDistance(X_1, X_2);
+        double widthD =  width_1 / 2 + height_2 / 2;
+
+        if (!(containment(two)) && !(adjacent(two)) && (width_rec1 > width_rec2 || height_rec1 > height_rec2) && distanceY < heightD && distanceX < widthD ) {
             return true;
         }
-        System.out.println("They are not intersecting");
         return false;
     }
 
 	public boolean adjacent(Rectangles two) {
 
 //       Coordenadas Y
+
         int dis_height_rec1 = (int) getDistance(this.bottomRight.y, this.topLeft.y);
         int dis_height_rec2 = (int) getDistance(two.bottomRight.y, two.topLeft.y);
 

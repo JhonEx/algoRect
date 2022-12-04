@@ -27,10 +27,10 @@ public class Rectangles {
     }
 
     public boolean intersect(Rectangles two) {
-        if (this.topLeft.y < two.bottomRight.y ||
+        if (!(containment(two)) && !(adjacent(two)) && (this.topLeft.y < two.bottomRight.y ||
                 this.bottomRight.y > two.topLeft.y ||
                 this.bottomRight.x < two.topLeft.x ||
-                this.topLeft.x > two.bottomRight.x) {
+                this.topLeft.x > two.bottomRight.x)) {
             System.out.println("They are intersecting");
             return true;
         }

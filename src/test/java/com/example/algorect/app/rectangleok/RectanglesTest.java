@@ -47,7 +47,7 @@ class RectanglesTest {
         bottomRight1 = new Point(6, 1);
         Rectangles rectangleOne = new Rectangles(topLeftRec1, bottomRight1);
 
-        assertTrue(rectangleOne.adjacent(new Rectangles(new Point(6,7), new Point(10,4))));
-        assertFalse(rectangleOne.adjacent(new Rectangles(new Point(7, 7), new Point(10, 4))));
+        assertTrue(rectangleOne.adjacency(new Rectangles(new Point(6,7), new Point(10,4))));
+        assertFalse(rectangleOne.adjacency(new Rectangles(new Point(7, 7), new Point(10, 4))));
     }
 }

@@ -42,14 +42,14 @@ public class Rectangles {
         double distanceX = getDistance(X_1, X_2);
         double widthD =  width_1 / 2 + height_2 / 2;
 
-        if (!(containment(two)) && !(adjacent(two)) && (width_rec1 > width_rec2 || height_rec1 > height_rec2)
+        if (!(containment(two)) && !(adjacency(two)) && (width_rec1 > width_rec2 || height_rec1 > height_rec2)
                 && distanceY < heightD && distanceX < widthD ) {
             return true;
         }
         return false;
     }
 
-	public boolean adjacent(Rectangles two) {
+	public boolean adjacency(Rectangles two) {
 
 //       Coordenadas Y
         int dis_height_rec1 = (int) getDistance(this.bottomRight.y, this.topLeft.y);

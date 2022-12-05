@@ -1,4 +1,4 @@
-package com.example.algorect.app.Junior_Rec;
+package com.example.algorect.app.rectangleok;
 
 public class Point {
     int x;

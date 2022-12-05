@@ -1,6 +1,5 @@
-package com.example.algorect.app.Junior_Rec;
+package com.example.algorect.app.rectangleok;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -8,11 +7,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class RectanglesTest {
     Point topLeftRec1;
     Point bottomRight1;
-
-    @BeforeEach
-    void setUp() {
-
-    }
 
     @Test
     void containment() {
